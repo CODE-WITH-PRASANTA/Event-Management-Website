@@ -1,0 +1,34 @@
+.gbread-container {
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gbread-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gbread-title {
+  color: #fff;
+  font-size: 60px;
+  font-family: "Times New Roman", serif;
+  margin-bottom: 10px;
+}
+
+.gbread-path {
+  color: #fff;
+  display: flex;
+  gap: 10px;
+}

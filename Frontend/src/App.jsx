@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AboutUsHome from "./Components/AboutUsHome/AboutUsHome";
-import Gallery from "./Pages/Galary/Galary";
+import Galary from "./Pages/Galary/Galary";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/about-us/home" element={<AboutUsHome />} />
 
         {/* Gallery Page */}
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<Galary />} />
 
         {/* Default Route */}
       </Routes>
