@@ -5,10 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUsHome from "./Components/AboutUsHome/AboutUsHome";
 import Gallery from "./Pages/Galary/Galary";
 import Home from "./Pages/Home/Home";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
       <Routes>
 
         <Route path="/" element={<Home />} />

@@ -3,8 +3,8 @@ import "./HomeHeroSection.css";
 
 import heroBg from "../../assets/Bg-1.webp";
 
-import flowerLeftBig from "../../assets/LeftFlower-2.webp";
-import flowerRightFade from "../../assets/leftFlower-1.webp";
+import flowerLeftBig from "../../assets/MainF-2.webp";
+import flowerRightFade from "../../assets/MainF-1.webp";
 import twinFlower from "../../assets/TwinFlower-1.webp";
 import yellowFlower from "../../assets/yellow-1.webp";
 import dividerImg from "../../assets/Devider.webp";
