@@ -1,0 +1,212 @@
+/* ===== MAIN SECTION ===== */
+.getintouch {
+  position: relative;
+  padding: 80px 8%;
+  background: #f9f9f9;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  margin-top: 150px;
+}
+
+/* ===== Background CONTACT text ===== */
+.getintouch-bg-text {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 180px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.03);
+  letter-spacing: 20px;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* ===== Floating Flowers ===== */
+.getintouch-flower {
+  position: absolute;
+  width: 380px;
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.getintouch-flower-left {
+  left: -120px;
+  bottom: 80px;
+}
+
+.getintouch-flower-right {
+  right: -120px;
+  top: 120px;
+  transform: rotate(180deg);
+}
+
+/* ===== Container ===== */
+.getintouch-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+/* ===== Left Side ===== */
+.getintouch-info {
+  flex: 1;
+}
+
+.getintouch-info h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.getintouch-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.getintouch-connect-title {
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.getintouch-social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.getintouch-social-icons div {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.getintouch-social-icons div:hover {
+  background: #d27a4b;
+  color: #fff;
+}
+
+/* ===== Right Side ===== */
+.getintouch-form {
+  flex: 1.3;
+}
+
+.getintouch-form h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.getintouch-form h2 span {
+  border-bottom: 3px solid #d27a4b;
+}
+
+.getintouch-form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.getintouch input,
+.getintouch textarea {
+  width: 100%;
+  padding: 18px 25px;
+  border-radius: 40px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.getintouch textarea {
+  border-radius: 30px;
+  height: 160px;
+  resize: none;
+}
+
+.getintouch input:focus,
+.getintouch textarea:focus {
+  border-color: #d27a4b;
+  box-shadow: 0 0 0 3px rgba(210, 122, 75, 0.1);
+}
+
+.getintouch button {
+  background: #d27a4b;
+  border: none;
+  padding: 15px 45px;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.getintouch button:hover {
+  background: #b9653b;
+}
+
+/* ===== Gallery ===== */
+.getintouch-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.getintouch-gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .getintouch-container {
+    flex-direction: column;
+  }
+
+  .getintouch-form-row {
+    flex-direction: column;
+  }
+
+  .getintouch-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .getintouch-bg-text {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .getintouch {
+    padding: 80px 5%;
+  }
+
+  .getintouch-bg-text {
+    font-size: 60px;
+    letter-spacing: 8px;
+  }
+
+  .getintouch-flower {
+    width: 200px;
+  }
+
+  .getintouch-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
