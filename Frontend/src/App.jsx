@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutUsHome from "./Components/AboutUsHome/AboutUsHome";
 import Gallery from "./Pages/Galary/Galary";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import GetInTouch from "./Components/GetInTouch/GetInTouch";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
 
         {/* Default Route */}
       </Routes>
+      <GetInTouch/>
+      <Footer/>
     </BrowserRouter>
   );
 }

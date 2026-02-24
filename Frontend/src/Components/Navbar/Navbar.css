@@ -1,6 +1,5 @@
 /* ===============================
    PREMIUM SOFT EVENT NAVBAR
-   (WENDOLA Inspired Style)
 ================================= */
 
 /* ===== Navbar Base ===== */
@@ -39,7 +38,7 @@
 
 .nav-menu li {
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   color: #1E1E1E;
@@ -115,7 +114,7 @@
 
 .dropdown-menu li {
   padding: 12px 22px;
-  font-size: 14px;
+  font-size: 18px;
   color: #1E1E1E;
   transition: all 0.3s ease;
 }
@@ -132,11 +131,12 @@
   border: none;
   padding: 14px 32px;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(214, 124, 69, 0.25);
+  text-decoration: none;
 }
 
 .appointment-btn:hover {
@@ -166,7 +166,7 @@
   width: 320px;
   max-width: 85%;
   height: 100%;
-  background: #1E1E1E;
+  background: #171c30;
   color: #ffffff;
   padding: 25px;
   transition: right 0.4s ease;
