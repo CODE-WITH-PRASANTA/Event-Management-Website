@@ -1,0 +1,141 @@
+/* Wonderfulcouple.css */
+
+.wedding-section {
+  position: relative;
+  background-color: #eef7fc; /* Light blue tint from reference */
+  padding: 80px 0;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif; /* Classic wedding font */
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Watermark Styling */
+.watermark-text {
+  position: absolute;
+  bottom: 10px;
+  right: 5%;
+  font-size: 12rem;
+  font-weight: 900;
+  color: rgba(0, 50, 100, 0.04);
+  letter-spacing: 15px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Left Column Styling */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrapper-small {
+  border: 10px solid #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;
+}
+
+.image-wrapper-small img {
+  width: 100%;
+  display: block;
+}
+
+.quote-box {
+  margin-top: 30px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.quote-box p {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.view-map-btn {
+  background-color: #a52a4a; /* Burgundy color from button */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.view-map-btn:hover {
+  transform: translateY(-2px);
+  background-color: #8a223e;
+}
+
+/* Right Column Styling */
+.right-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-content {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.event-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+.image-wrapper-large {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image-wrapper-large img {
+  width: 100%;
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .wedding-grid {
+    grid-template-columns: 1fr;
+  }
+  .watermark-text {
+    font-size: 5rem;
+  }
+}
