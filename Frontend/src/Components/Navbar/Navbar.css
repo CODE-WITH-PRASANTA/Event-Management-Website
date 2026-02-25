@@ -15,8 +15,10 @@
 }
 
 .nav-container {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  max-width: 1320px;   /* prevents stretching on large screens */
+  padding: 0 40px;     /* clean side breathing space */
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,14 +33,15 @@
 /* ===== Desktop Menu ===== */
 .nav-menu {
   display: flex;
-  gap: 35px;
+  gap: 32px;
   list-style: none;
   align-items: center;
+  white-space: nowrap;   /* prevents text break */
 }
 
 .nav-menu li {
   position: relative;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   cursor: pointer;
   color: #1E1E1E;
@@ -129,14 +132,15 @@
   background: #D67C45;
   color: #ffffff;
   border: none;
-  padding: 14px 32px;
+  padding: 12px 28px;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(214, 124, 69, 0.25);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .appointment-btn:hover {
@@ -273,16 +277,56 @@
   z-index: 900;
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ===============================
+   PROFESSIONAL RESPONSIVE SYSTEM
+================================= */
 
-/* Tablet */
-@media (max-width: 1024px) {
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .nav-container {
+    max-width: 1400px;
+  }
+
   .nav-menu {
-    gap: 25px;
+    gap: 40px;
+  }
+
+  .nav-menu li {
+    font-size: 18px;
   }
 }
 
-/* Mobile & Tablet */
+
+/* Laptop (1200px–1439px) */
+@media (max-width: 1439px) {
+  .nav-menu {
+    gap: 28px;
+  }
+
+  .nav-menu li {
+    font-size: 16px;
+  }
+}
+
+
+/* Tablet Landscape (992px–1199px) */
+@media (max-width: 1199px) {
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .nav-menu li {
+    font-size: 15px;
+  }
+
+  .appointment-btn {
+    padding: 10px 22px;
+    font-size: 15px;
+  }
+}
+
+
+/* Tablet & Mobile */
 @media (max-width: 992px) {
   .nav-menu {
     display: none;
@@ -295,20 +339,25 @@
   .hamburger {
     display: block;
   }
+
+  .nav-container {
+    padding: 0 25px;
+  }
 }
+
 
 /* Small Mobile */
 @media (max-width: 480px) {
+  .navbar {
+    padding: 14px 0;
+  }
+
   .nav-logo img {
-    height: 45px;
+    height: 42px;
   }
 
-  .mobile-menu {
-    width: 85%;
-    padding: 20px;
-  }
-
-  .mobile-header img {
-    height: 40px;
+  .nav-container {
+    padding: 0 18px;
   }
 }
+

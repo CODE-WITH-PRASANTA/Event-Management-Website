@@ -2,9 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Navbar from "./Components/Navbar/Navbar";
 import AboutUsHome from "./Components/AboutUsHome/AboutUsHome";
 import Gallery from "./Pages/Galary/Galary";
-import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 
