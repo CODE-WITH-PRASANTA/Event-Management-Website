@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
 import AboutUsHome from "./Components/AboutUsHome/AboutUsHome";
-import Gallery from "./Pages/Galary/Galary";
+import Home from "./Pages/Home/Home";
+import Galary from "./Pages/Galary/Galary";
+import Pricing from "./Pages/Pricing/Pricing";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 
@@ -13,11 +15,15 @@ function App() {
     <BrowserRouter>
     <Navbar/>
       <Routes>
+
+        <Route path="/" element={<Home />} />
         {/* About Us Page */}
         <Route path="/about-us/home" element={<AboutUsHome />} />
 
         {/* Gallery Page */}
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<Galary />} />
+        <Route path="/prices" element={<Pricing />}/>
+        
 
         {/* Default Route */}
       </Routes>

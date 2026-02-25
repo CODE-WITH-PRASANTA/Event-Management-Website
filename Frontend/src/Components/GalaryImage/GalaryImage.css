@@ -1,0 +1,124 @@
+/* ================= SECTION ================= */
+
+.galaryimage--section {
+  background: #efefef;
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= LEAF ================= */
+
+.galaryimage--leaf {
+  position: absolute;
+  width: 220px;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: floatLeaf 6s ease-in-out infinite;
+}
+
+/* left leaf */
+.galaryimage--leaf.left {
+  left: -60px;
+  top: 120px;
+}
+
+/* right leaf */
+.galaryimage--leaf.right {
+  right: -60px;
+  bottom: 120px;
+  transform: rotate(180deg);
+}
+
+/* floating animation */
+@keyframes floatLeaf {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* ================= GRID ================= */
+
+.galaryimage--container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* ================= IMAGE BOX ================= */
+
+.galaryimage--item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+}
+
+/* image */
+.galaryimage--item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(.22,.61,.36,1);
+}
+
+/* hover effect */
+.galaryimage--item:hover img {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* ================= POPUP ================= */
+
+.galaryimage--popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.galaryimage--popup img {
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .galaryimage--container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .galaryimage--leaf {
+    width: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galaryimage--container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .galaryimage--leaf {
+    width: 120px;
+    opacity: 0.6;
+  }
+}
