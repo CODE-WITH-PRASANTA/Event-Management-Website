@@ -1,113 +1,156 @@
-/* Container & Background */
-.team-section {
-  padding: 80px 20px;
-  background-color: #ffffff;
-  font-family: 'Playfair Display', serif; /* Use a premium serif font */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital@0;1&display=swap");
+
+:root {
+  --primary-text: #1a1a1a;
+  --secondary-text: #8a8a8a;
+  --accent-gold: #c5a059;
+}
+
+/* SECTION WITH PREMIUM GRADIENT */
+.organizers-section {
+  background: linear-gradient(135deg, #f8f9fb, #eef1f5);
+  padding: 140px 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* ANIMATED BACKGROUND BLOBS */
+.bg-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(197,160,89,0.15), transparent 70%);
+  border-radius: 50%;
+  animation: blobMove 18s infinite alternate ease-in-out;
+  filter: blur(40px);
 }
 
-/* Typography */
-.team-header {
-  margin-bottom: 60px;
+.blob1 { top: -100px; left: -100px; }
+.blob2 { bottom: -100px; right: -100px; animation-delay: 6s; }
+.blob3 { top: 40%; left: 60%; animation-delay: 12s; }
+
+@keyframes blobMove {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(60px, -40px) scale(1.2); }
 }
 
-.sub-title {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #88a0b0;
-  text-transform: uppercase;
+/* HEADER */
+.organizers-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: #7a8694;
   margin-bottom: 10px;
 }
 
-.main-title {
-  font-size: 42px;
-  color: #1a1a1a;
+.organizers-title {
+  font-family: 'Cinzel', serif;
+  font-size: 58px;
   font-weight: 400;
-  text-transform: uppercase;
+  margin-bottom: 120px;
 }
 
-/* Grid Layout */
-.team-grid {
+/* GRID */
+.organizers-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 100px;
   flex-wrap: wrap;
 }
 
-.team-card {
-  width: 300px;
-  transition: transform 0.3s ease;
+/* CARD ANIMATION */
+.organizer-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: fadeLuxury 1s ease forwards;
+  animation-delay: var(--delay);
 }
 
-.team-card:hover {
-  transform: translateY(-10px);
+@keyframes fadeLuxury {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-/* Diamond Image Styling */
-.image-wrapper {
+/* DIAMOND */
+.diamond-wrapper {
   position: relative;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto 30px auto;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 40px;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.diamond-container {
+  width: 230px;
+  height: 230px;
+  margin: auto;
+  filter: drop-shadow(0px 25px 40px rgba(0,0,0,0.08));
 }
 
 .diamond-shape {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  background: #f0f0f0;
+  overflow: hidden;
+  transition: 0.6s ease;
 }
 
 .diamond-shape img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.1); /* Slightly zoom to fill the diamond corners */
+  transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* Decorative Elements (Leaves) */
-/* Note: In a production app, use actual SVG leaf assets here */
-.floral-decoration {
+.organizer-card:hover img {
+  transform: scale(1.2);
+}
+
+.organizer-card:hover .diamond-container {
+  filter: drop-shadow(0px 35px 60px rgba(197,160,89,0.3));
+}
+
+/* FLOWER ICONS */
+.svg-flower {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  z-index: -1;
-  opacity: 0.6;
-  background-size: contain;
-  background-repeat: no-repeat;
+  font-size: 45px;
+  z-index: 10;
+  animation: rotateFlower 8s linear infinite;
 }
 
-.top-left {
-  top: -20px;
-  left: -20px;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/2921/2921711.png'); /* Placeholder leaf */
+.svg-top { top: -15px; left: -15px; }
+.svg-bottom { bottom: -15px; right: -15px; }
+
+@keyframes rotateFlower {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.bottom-right {
-  bottom: -20px;
-  right: -20px;
-  transform: rotate(180deg);
-  background-image: url('https://cdn-icons-png.flaticon.com/512/2921/2921711.png'); /* Placeholder leaf */
+/* TEXT */
+.organizer-name {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
 }
 
-/* Member Text info */
-.member-name {
-  font-size: 18px;
-  letter-spacing: 1px;
-  color: #222;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.member-role {
-  font-size: 13px;
-  color: #999;
+.organizer-role {
+  font-family: 'Lora', serif;
+  font-size: 15px;
   font-style: italic;
+  color: var(--secondary-text);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .organizers-title { font-size: 36px; }
+  .organizers-grid { gap: 60px; }
 }

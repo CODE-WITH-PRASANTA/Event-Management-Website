@@ -2,16 +2,18 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AboutUsHome from "./Components/AboutUsHome/AboutUsHome";
 import Gallery from "./Pages/Galary/Galary";
+import Navbar from "./Components/Navbar/Navbar";
+import About from "./Pages/About/About";
 
 
 function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         {/* About Us Page */}
-        <Route path="/about" element={<AboutUsHome />} />
+        <Route path="/about" element={<About />} />
     
 
         {/* Gallery Page */}
