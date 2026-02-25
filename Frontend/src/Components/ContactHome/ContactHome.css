@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400&display=swap');
+
+:root {
+  --hero-overlay: rgba(0, 0, 0, 0.45);
+  --white: #ffffff;
+}
+
+/* MAIN HERO SECTION */
+.hero {
+  width: 100%;
+  /* Fluid height based on viewport */
+  min-height: 40vh; 
+  height: clamp(280px, 50vh, 500px);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+              url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  padding: 20px;
+}
+
+.hero__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* TEXT BLOCK */
+.hero__content h1 {
+  font-family: "Cinzel", serif;
+  /* Fluid typography: min 1.8rem, scales with width, max 4rem */
+  font-size: clamp(1.8rem, 8vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.5vw, 4px);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breadcrumb__separator {
+  opacity: 0.6;
+}
+
+.breadcrumb__item--active {
+  font-weight: 600;
+  border-bottom: 1px solid var(--white);
+}
+
+/* --------------------------------------
+   SPECIFIC DEVICE OVERRIDES
+----------------------------------------- */
+
+/* Large Desktops (Extra breathing room) */
+@media (min-width: 1400px) {
+  .hero {
+    height: 550px;
+  }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 768px) {
+  .hero {
+    height: 350px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .hero {
+    height: 300px;
+    padding: 15px;
+  }
+  
+  .breadcrumb {
+    gap: 0.5rem;
+  }
+}
+
+/* Landscape Mode for Mobile (Prevents hero from taking over whole screen) */
+@media (max-height: 450px) and (orientation: landscape) {
+  .hero {
+    height: 250px;
+  }
+  .hero__content h1 {
+    font-size: 2rem;
+  }
+}

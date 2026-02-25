@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './WonderfullCopule.css';
 
-import event1 from '../../assets/event-1.webp';
-import event2 from '../../assets/event-2.webp';
+import event1 from '../../assets/Copule1.webp';
+import event2 from '../../assets/Copule2.webp';
 
 const WonderfullCopule = () => {
 

@@ -1,0 +1,162 @@
+/* ================= ROOT ================= */
+.wServices{
+  position:relative;
+  padding: clamp(70px,8vw,120px) 5%;
+  background:#f7f6f3;
+  overflow:hidden;
+}
+
+/* ================= HEADER ================= */
+.wServices__header{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.wServices__label{
+  font-family:Inter,sans-serif;
+  color:#d77a3b;
+  letter-spacing:2px;
+  font-size:14px;
+}
+
+.wServices__title{
+  font-family:"Playfair Display",serif;
+  font-weight:500;
+  font-size: clamp(34px,5vw,60px);
+  line-height:1.2;
+  color:#111;
+}
+
+.wServices__flower{
+  width:120px;
+  opacity:.7;
+  margin-top:14px;
+}
+
+/* ================= GRID ================= */
+.wServices__grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:40px;
+  align-items:start;
+}
+
+/* ================= SIDE IMAGE ================= */
+.wServices__sideImage img{
+  width:100%;
+  border-radius:6px;
+}
+
+/* ================= CARD ================= */
+.wServices__card{
+  position:relative;
+  background:#fff;
+  border-radius:10px;
+  padding:60px 34px 40px;
+  border:1px solid #e6e6e6;
+  text-align:center;
+  overflow:hidden;
+  transition:.35s;
+}
+
+/* card hover border */
+.wServices__card:hover{
+  border:8px solid #d77a3b;
+}
+
+/* leaf inside card */
+.wServices__cardLeaf{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:160px;
+  opacity:.25;
+  pointer-events:none;
+}
+
+/* ================= ICON ================= */
+.wServices__iconWrap{
+  position:absolute;
+  top:-45px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  background:#d77a3b;
+  display:grid;
+  place-items:center;
+  font-size:36px;
+  color:#fff;
+  transition:transform .6s;
+}
+
+/* ICON SPIN */
+.wServices__card:hover .wServices__iconWrap{
+  transform:translateX(-50%) rotate(360deg);
+}
+
+/* ================= TEXT ================= */
+.wServices__cardTitle{
+  font-family:"Playfair Display",serif;
+  font-size:26px;
+  margin-top:20px;
+  margin-bottom:12px;
+}
+
+.wServices__cardText{
+  font-family:Inter,sans-serif;
+  color:#666;
+  line-height:1.7;
+}
+
+/* ================= FLOAT LEAVES ================= */
+.wServices__leaf{
+  position:absolute;
+  pointer-events:none;
+}
+
+.wServices__leaf--left{
+  left:-40px;
+  top:200px;
+  width:220px;
+  animation:wServicesFloat 7s ease-in-out infinite;
+}
+
+.wServices__leaf--right{
+  right:-40px;
+  bottom:120px;
+  width:200px;
+  animation:wServicesFloatSlow 9s ease-in-out infinite;
+}
+
+@keyframes wServicesFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes wServicesFloatSlow{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-28px)}
+  100%{transform:translateY(0)}
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:1100px){
+  .wServices__grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:700px){
+  .wServices__grid{
+    grid-template-columns:1fr;
+  }
+
+  .wServices__iconWrap{
+    width:80px;
+    height:80px;
+    font-size:30px;
+  }
+}
