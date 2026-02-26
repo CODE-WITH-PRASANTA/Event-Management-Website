@@ -5,23 +5,23 @@
   padding: 90px 0;
   position: relative;
   overflow: hidden;
+  z-index: 1; /* create layer */
 }
-
 /* ================= LEAF ================= */
 
 .galaryimage--leaf {
   position: absolute;
   width: 220px;
-  
   opacity: 0.9;
   pointer-events: none;
   animation: floatLeaf 6s ease-in-out infinite;
+
+  z-index: 0;          /* ✅ behind everything */
 }
 
 .galaryimage--leaf.left {
   left: -60px;
   top: 120px;
-  
 }
 
 .galaryimage--leaf.right {
@@ -46,8 +46,10 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding: 0 24px;
-}
 
+  position: relative;
+  z-index: 2;          /* ✅ above leaves */
+}
 /* ================= IMAGE ================= */
 
 .galaryimage--item {
@@ -78,8 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-  padding: 20px;
+  z-index: 9999; /* already correct */
 }
 
 .galaryimage--popup img {
@@ -89,31 +90,45 @@
   object-fit: contain;
 }
 
+/* ================= MOBILE NAV (HIDDEN BY DEFAULT) ================= */
+
+.galaryimage--mobileNav {
+  display: none;
+}
+
 /* =====================================================
-   ✅ RESPONSIVE BREAKPOINTS (PRO LEVEL)
+   ✅ RESPONSIVE
 ===================================================== */
 
-/* ---------- Large Desktop (1400px+) ---------- */
+/* ---------- Large Desktop ---------- */
 @media (min-width: 1400px) {
   .galaryimage--container {
-    max-width: 1350px;
-    gap: 50px;
+    max-width: 1400px;
+    gap: 56px;
   }
 }
 
-/* ---------- Laptop ---------- */
+/* ---------- Desktop / Laptop ---------- */
 @media (max-width: 1200px) {
   .galaryimage--container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 34px;
+  }
+
+  .galaryimage--leaf {
+    width: 190px;
   }
 }
 
-/* ---------- Tablet Landscape ---------- */
+/* ---------- Tablet ---------- */
 @media (max-width: 992px) {
   .galaryimage--container {
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
+  }
+
+  .galaryimage--section {
+    padding: 80px 0;
   }
 
   .galaryimage--leaf {
@@ -124,26 +139,46 @@
 
 /* ---------- Tablet Portrait ---------- */
 @media (max-width: 768px) {
+  .galaryimage--container {
+    gap: 24px;
+    padding: 0 20px;
+  }
+
   .galaryimage--section {
     padding: 70px 0;
   }
 
-  .galaryimage--container {
-    gap: 24px;
-  }
-
   .galaryimage--leaf {
-    width: 140px;
+    width: 135px;
     opacity: 0.7;
   }
 }
 
-/* ---------- Mobile Large ---------- */
+/* =====================================================
+   ⭐ MOBILE HORIZONTAL PAGINATION ONLY
+===================================================== */
+
 @media (max-width: 600px) {
+
   .galaryimage--container {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 18px;
     padding: 0 16px;
+
+    scrollbar-width: none;
+  }
+
+  .galaryimage--container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .galaryimage--item {
+    flex: 0 0 85%;
+    min-width: 85%;
+    scroll-snap-align: center;
+    aspect-ratio: 4 / 3;
   }
 
   .galaryimage--section {
@@ -151,23 +186,50 @@
   }
 
   .galaryimage--leaf {
-    width: 120px;
+    width: 110px;
     opacity: 0.6;
+  }
+
+  /* pagination buttons */
+  .galaryimage--mobileNav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .galaryimage--mobileNav button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .galaryimage--mobileNav button:hover {
+    transform: scale(1.1);
   }
 }
 
 /* ---------- Small Mobile ---------- */
 @media (max-width: 400px) {
+
   .galaryimage--section {
     padding: 45px 0;
   }
 
-  .galaryimage--container {
-    gap: 16px;
+  .galaryimage--item {
+    flex: 0 0 92%;
+    min-width: 92%;
+    aspect-ratio: 1 / 1;
   }
 
   .galaryimage--leaf {
-    width: 90px;
+    width: 85px;
     opacity: 0.5;
   }
 }

@@ -1,6 +1,6 @@
 /* ================= BREADCRUMB CONTAINER ================= */
 
-.gbread-container {
+.eventbread-container {
   width: 100%;
   height: 500px;
   background-size: cover;
@@ -14,7 +14,7 @@
 
 /* ================= OVERLAY ================= */
 
-.gbread-overlay {
+.eventbread-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.45);
@@ -28,9 +28,9 @@
 
 /* ================= TITLE ================= */
 
-.gbread-title {
+.eventbread-title {
   color: #fff;
-  font-size: 42px;
+  font-size: 65px;
   font-family: "Times New Roman", serif;
   margin-bottom: 12px;
   text-align: center;
@@ -39,7 +39,7 @@
 
 /* ================= PATH ================= */
 
-.gbread-path {
+.eventbread-path {
   color: #fff;
   display: flex;
   gap: 10px;
@@ -55,52 +55,52 @@
 
 /* ---------- Large Laptop ---------- */
 @media (max-width: 1200px) {
-  .gbread-container {
+  .eventbread-container {
     height: 440px;
   }
 
-  .gbread-title {
+  .eventbread-title {
     font-size: 36px;
   }
 }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 992px) {
-  .gbread-container {
+  .eventbread-container {
     height: 380px;
   }
 
-  .gbread-title {
+  .eventbread-title {
     font-size: 30px;
   }
 
-  .gbread-path {
+  .eventbread-path {
     font-size: 15px;
   }
 }
 
 /* ---------- Tablet Portrait ---------- */
 @media (max-width: 768px) {
-  .gbread-container {
+  .eventbread-container {
     height: 320px;
   }
 
-  .gbread-title {
+  .eventbread-title {
     font-size: 26px;
   }
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 576px) {
-  .gbread-container {
+  .eventbread-container {
     height: 260px;
   }
 
-  .gbread-title {
+  .eventbread-title {
     font-size: 22px;
   }
 
-  .gbread-path {
+  .eventbread-path {
     font-size: 14px;
     gap: 6px;
   }
@@ -108,15 +108,15 @@
 
 /* ---------- Small Mobile ---------- */
 @media (max-width: 400px) {
-  .gbread-container {
+  .eventbread-container {
     height: 220px;
   }
 
-  .gbread-title {
+  .eventbread-title {
     font-size: 20px;
   }
 
-  .gbread-path {
+  .eventbread-path {
     font-size: 13px;
   }
 }

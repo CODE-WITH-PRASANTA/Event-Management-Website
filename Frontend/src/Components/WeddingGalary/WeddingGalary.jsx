@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./WeddingGalary.css";
 import {
   FaTimes,
@@ -9,7 +9,6 @@ import {
   FaShareAlt,
 } from "react-icons/fa";
 
-/* ==== IMPORT IMAGES ==== */
 import img1 from "../../assets/page-4.webp";
 import img2 from "../../assets/page-2.webp";
 import img3 from "../../assets/page-6.webp";
@@ -17,12 +16,13 @@ import img4 from "../../assets/page-7.webp";
 import img5 from "../../assets/page-8.webp";
 import img6 from "../../assets/page-9.webp";
 import img7 from "../../assets/page-3.webp";
-import img8 from "../../assets/page-5.webp"
+import img8 from "../../assets/page-5.webp";
 
-const images = [img1, img2, img3, img4, img5, img6,img7,img8];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 
-const WeddingGalary= () => {
+const WeddingGalary = () => {
   const [active, setActive] = useState(null);
+  const scrollRef = useRef(null);
 
   const next = () =>
     setActive((prev) => (prev + 1) % images.length);
@@ -32,38 +32,53 @@ const WeddingGalary= () => {
       prev === 0 ? images.length - 1 : prev - 1
     );
 
+  /* ⭐ mobile horizontal pagination */
+  const scrollGallery = (dir) => {
+    if (!scrollRef.current) return;
+
+    const width = scrollRef.current.offsetWidth;
+
+    scrollRef.current.scrollBy({
+      left: dir === "next" ? width * 0.9 : -width * 0.9,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="wcg-wrapper">
 
-      {/* ===== TITLE ===== */}
       <div className="wcg-heading">
         <div className="wcg-heart">❤ ❤</div>
         <p className="wcg-sub">SWEET MEMORIES</p>
         <h2>WEDDING GALLERY</h2>
       </div>
 
-      {/* ===== IMAGE ROW ===== */}
-      <div className="wcg-grid">
+      {/* GRID */}
+      <div className="wcg-grid" ref={scrollRef}>
         {images.map((img, i) => (
           <div
             key={i}
-            className={`wcg-item ${i % 2 === 0 ? "wcg-circle" : "wcg-rounded"}`}
+            className={`wcg-item ${
+              i % 2 === 0 ? "wcg-circle" : "wcg-rounded"
+            }`}
             onClick={() => setActive(i)}
           >
             <img src={img} alt="" />
-
-            <div className="wcg-hover">
-        
-            </div>
+            <div className="wcg-hover"></div>
           </div>
         ))}
       </div>
 
-      {/* ===== POPUP ===== */}
+      {/* ⭐ MOBILE PAGINATION */}
+      <div className="wcg-mobileNav">
+        <button onClick={() => scrollGallery("prev")}>‹</button>
+        <button onClick={() => scrollGallery("next")}>›</button>
+      </div>
+
+      {/* LIGHTBOX */}
       {active !== null && (
         <div className="wcg-lightbox">
 
-          {/* TOP BAR */}
           <div className="wcg-topbar">
             <span>{active + 1} / {images.length}</span>
 

@@ -9,6 +9,7 @@ import Galary from "./Pages/Galary/Galary";
 import Pricing from "./Pages/Pricing/Pricing";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+import Event from "./Pages/Events/Events";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         {/* Gallery Page */}
         <Route path="/gallery" element={<Galary />} />
         <Route path="/prices" element={<Pricing />}/>
+        <Route path="/event" element={<Event />}/>
+        
+        
         
 
         {/* Default Route */}
