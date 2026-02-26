@@ -9,9 +9,16 @@ import About from "./Pages/About/About";
 import Pricing from "./Pages/Pricing/Pricing";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
+<<<<<<< HEAD
+import Event from "./Pages/Events/Events";
+=======
 import Contact from "./Pages/Contact/Contact";
+<<<<<<< HEAD
 import News from "./Pages/News/News";
 import NewsDetails from "./Pages/NewsDetails/NewsDetails";
+=======
+>>>>>>> 72f1c9ebf619ff65685af803de6af94b9784ffe5
+>>>>>>> 7b24bb8cc0d0836998edbea79f453f488e030b02
 
 function App() {
   return (
@@ -27,11 +34,17 @@ function App() {
         {/* Gallery Page */}
         <Route path="/gallery" element={<Galary />} />
         <Route path="/prices" element={<Pricing />}/>
+<<<<<<< HEAD
+        <Route path="/event" element={<Event />}/>
+        
+        
+=======
 
 
 
          {/* Contact page */}
         <Route path="/contact" element={<Contact/>}/>
+<<<<<<< HEAD
 
          {/* News page */}
         <Route path="/news" element={<News/>} />
@@ -39,6 +52,9 @@ function App() {
          {/* News Details page */}
         <Route path="/news-details" element={<NewsDetails/>} />
 
+=======
+>>>>>>> 72f1c9ebf619ff65685af803de6af94b9784ffe5
+>>>>>>> 7b24bb8cc0d0836998edbea79f453f488e030b02
         
 
         {/* Default Route */}

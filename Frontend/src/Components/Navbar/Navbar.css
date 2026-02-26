@@ -17,7 +17,7 @@
 .nav-container {
   width: 100%;
   max-width: 1320px;   /* prevents stretching on large screens */
-  padding: 0 40px;     /* clean side breathing space */
+  padding: -1px 40px;     /* clean side breathing space */
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -327,7 +327,7 @@
 
 
 /* Tablet & Mobile */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .nav-menu {
     display: none;
   }
@@ -341,7 +341,7 @@
   }
 
   .nav-container {
-    padding: 0 25px;
+    padding: 0 20px;
   }
 }
 
