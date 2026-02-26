@@ -29,15 +29,15 @@ const OurOrganization = () => {
   return (
     <section className="organizers-section">
 
-      {/* ===== Floating Luxury Bubbles ===== */}
+      {/* Premium Floating Luxury Bubbles */}
       <div className="bubbles">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span className="bubble b1"></span>
+        <span className="bubble b2"></span>
+        <span className="bubble b3"></span>
+        <span className="bubble b4"></span>
+        <span className="bubble b5"></span>
+        <span className="bubble b6"></span>
+        <span className="bubble b7"></span>
       </div>
 
       <div className="organizers-container">
@@ -46,7 +46,7 @@ const OurOrganization = () => {
           <h2 className="organizers-title">Our Lovely Team</h2>
         </div>
 
-        {/* DESKTOP GRID */}
+        {/* Desktop Grid */}
         <div className="organizers-grid">
           {teamMembers.map((member, index) => (
             <div className="organizer-card" key={index}>
@@ -69,7 +69,7 @@ const OurOrganization = () => {
           ))}
         </div>
 
-        {/* MOBILE SLIDER */}
+        {/* Mobile Slider */}
         <div className="mobile-slider">
           <button className="mobile-nav-btn left" onClick={handlePrev}>‹</button>
 
