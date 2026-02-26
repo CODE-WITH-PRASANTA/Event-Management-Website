@@ -1,0 +1,173 @@
+.wedding-section {
+  position: relative;
+  background: #eef7fc;
+  padding: 120px 0;
+  overflow: hidden;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ⭐ RIGHT SIDE FLORAL IMAGE */
+.floral-side {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  max-height: 900px;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* GRID */
+.wedding-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* WATERMARK */
+.watermark-text {
+  position: absolute;
+  bottom: 30px;
+  right: 8%;
+  font-size: 12rem;
+  font-weight: 900;
+  color: rgba(0, 40, 80, 0.04);
+  letter-spacing: 14px;
+  pointer-events: none;
+}
+
+/* ANIMATION */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LEFT */
+.left-col {
+  text-align: center;
+}
+
+/* SMALL IMAGE */
+.image-wrapper-small {
+  border: 12px solid #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.image-wrapper-small img {
+  width: 100%;
+  display: block;
+  transition: 1s;
+}
+
+.image-wrapper-small:hover img {
+  transform: scale(1.08);
+}
+
+/* QUOTE */
+.quote-box {
+  margin-top: 35px;
+}
+
+.quote-box p {
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* BUTTON */
+.view-map-btn {
+  background: linear-gradient(45deg,#a52a4a,#c44569);
+  border: none;
+  color: white;
+  padding: 13px 34px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.view-map-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(165,42,74,.35);
+}
+
+/* RIGHT */
+.text-content {
+  margin-bottom: 35px;
+}
+
+.description {
+  color: #666;
+  line-height: 1.9;
+  max-width: 520px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+/* TIME */
+.event-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* LARGE IMAGE */
+.image-wrapper-large {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+.image-wrapper-large img {
+  width: 100%;
+  display: block;
+  transition: 1.2s;
+}
+
+.image-wrapper-large:hover img {
+  transform: scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .wedding-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .watermark-text {
+    font-size: 5rem;
+  }
+
+  .floral-side {
+    opacity: .4;
+  }
+}
