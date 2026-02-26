@@ -129,18 +129,18 @@
 
 /* top leaf */
 .aboutWedding__leaf--top{
-  top:30px;
-  left:-40px;
-  width:150px;
+  top:10px;
+  left:5px;
+  width:115px;
 
   animation: aboutLeafFloatSlow 8s ease-in-out infinite;
 }
 
 /* side leaf */
 .aboutWedding__leaf--side{
-  right:-60px;
-  top:-60px;
-  width:140px;
+  right:-20px;
+  top:-53px;
+  width:115px;
 
   animation: aboutLeafFloat 7s ease-in-out infinite;
 }
