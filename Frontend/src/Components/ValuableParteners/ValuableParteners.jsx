@@ -2,16 +2,15 @@ import React, { useEffect } from "react";
 import "./ValuableParteners.css";
 
 const partnersData = [
-  { id: 1, name: "L+T" },
+  { id: 1, name: "L + T" },
   { id: 2, name: "HANI & IORIE" },
-  { id: 3, name: "R+S" },
+  { id: 3, name: "R + S" },
   { id: 4, name: "JK" },
-  { id: 5, name: "E&O" },
+  { id: 5, name: "E & O" },
   { id: 6, name: "OLIVE & MAGIE" },
 ];
 
 const ValuablePartners = () => {
-
   useEffect(() => {
     const reveals = document.querySelectorAll(".reveal");
 
@@ -23,7 +22,7 @@ const ValuablePartners = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     reveals.forEach((el) => observer.observe(el));
@@ -31,30 +30,33 @@ const ValuablePartners = () => {
 
   return (
     <section className="partners-section">
-      <div className="animated-bg"></div>
+      {/* Animated Gradient Background */}
+      <div className="bg-gradient"></div>
 
       <div className="partners-container">
         <div className="partners-content">
 
-          {/* Left Section */}
+          {/* LEFT TEXT */}
           <header className="partners-header reveal">
-            <span className="subtitle">THANK YOU FOR GIVING</span>
-            <h2 className="title-main">VALUABLE</h2>
-            <h2 className="title-sub">PARTNERS</h2>
+            <span className="subtitle">OUR BELOVED COUPLES</span>
+            <h2 className="title-main">Valuable</h2>
+            <h2 className="title-sub">Partners</h2>
+
+            <div className="divider"></div>
 
             <p className="description">
-              From the vibrant flowers and trees to the gently flowing streams,
-              this park provides the perfect backdrop.
+              Each celebration tells a beautiful story. We are grateful to our
+              wonderful couples who trusted us to make their special moments timeless.
             </p>
           </header>
 
-          {/* Grid Section */}
+          {/* RIGHT GRID */}
           <div className="partners-grid">
             {partnersData.map((partner, index) => (
               <div
                 key={partner.id}
                 className="partner-card reveal"
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${index * 0.12}s` }}
               >
                 <span className="logo-text">{partner.name}</span>
               </div>

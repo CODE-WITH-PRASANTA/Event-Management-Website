@@ -1,57 +1,61 @@
+/* ===== HERO SECTION ===== */
 .about-hero-section {
   position: relative;
   width: 100%;
-  height: 450px; /* Adjust based on your preference */
+  min-height: 60vh; /* Makes height responsive */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000'); /* Replace with your actual image */
+  padding: 0 20px;
+  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
-/* The dark gradient overlay seen in the reference */
+/* ===== OVERLAY ===== */
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.4) 100%
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.6) 100%
   );
   z-index: 1;
 }
 
+/* ===== CONTENT ===== */
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   color: #ffffff;
+  max-width: 1200px;
+  width: 100%;
 }
 
+/* ===== TITLE ===== */
 .hero-title {
-  font-family: 'Playfair Display', serif; /* A premium serif font looks best here */
-  font-size: 4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 4rem); /* Auto scales */
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: 2px;
   text-transform: capitalize;
 }
 
+/* ===== BREADCRUMB ===== */
 .breadcrumb {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 .breadcrumb-item {
@@ -76,12 +80,49 @@
   opacity: 0.7;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
+/* ===== EXTRA LARGE DESKTOP ===== */
+@media (min-width: 1600px) {
   .about-hero-section {
-    height: 300px;
+    min-height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* ===== LAPTOP ===== */
+@media (max-width: 1200px) {
+  .about-hero-section {
+    min-height: 55vh;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .about-hero-section {
+    min-height: 50vh;
+  }
+
+  .hero-title {
+    letter-spacing: 1px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+  .about-hero-section {
+    min-height: 40vh;
+    padding: 0 15px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    gap: 6px;
   }
 }

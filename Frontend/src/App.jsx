@@ -2,12 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Gallery from "./Pages/Galary/Galary";
 import Home from "./Pages/Home/Home";
 import Galary from "./Pages/Galary/Galary";
 import Navbar from "./Components/Navbar/Navbar";
 import About from "./Pages/About/About";
-
 import Pricing from "./Pages/Pricing/Pricing";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";

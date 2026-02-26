@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./OurOrganization.css";
 
 import team1 from "../../assets/team4-1.webp";
@@ -12,13 +12,33 @@ const OurOrganization = () => {
     { name: "ROKKI ILUES", role: "Executive", image: team3 },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? teamMembers.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) =>
+      prev === teamMembers.length - 1 ? 0 : prev + 1
+    );
+  };
+
   return (
     <section className="organizers-section">
 
-      {/* Animated Background Blobs */}
-      <div className="bg-blob blob1"></div>
-      <div className="bg-blob blob2"></div>
-      <div className="bg-blob blob3"></div>
+      {/* ===== Floating Luxury Bubbles ===== */}
+      <div className="bubbles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
       <div className="organizers-container">
         <div className="organizers-header">
@@ -26,33 +46,71 @@ const OurOrganization = () => {
           <h2 className="organizers-title">Our Lovely Team</h2>
         </div>
 
+        {/* DESKTOP GRID */}
         <div className="organizers-grid">
           {teamMembers.map((member, index) => (
-            <div
-              className="organizer-card"
-              key={index}
-              style={{ "--delay": `${index * 0.3}s` }}
-            >
+            <div className="organizer-card" key={index}>
               <div className="diamond-wrapper">
-
-                <div className="svg-flower svg-top">🌸</div>
-
-                <div className="diamond-container">
-                  <div className="diamond-shape">
+                <div className="diamond-flip">
+                  <div className="diamond-face front">
                     <img src={member.image} alt={member.name} />
                   </div>
+                  <div className="diamond-face back">
+                    <p>{member.name}</p>
+                  </div>
                 </div>
-
-                <div className="svg-flower svg-bottom">🌿</div>
-
               </div>
 
               <div className="member-info">
-                <h3 className="organizer-name">{member.name}</h3>
-                <p className="organizer-role">{member.role}</p>
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* MOBILE SLIDER */}
+        <div className="mobile-slider">
+          <button className="mobile-nav-btn left" onClick={handlePrev}>‹</button>
+
+          <div
+            className="mobile-slider-track"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {teamMembers.map((member, index) => (
+              <div className="organizer-card mobile-card" key={index}>
+                <div className="diamond-wrapper">
+                  <div className="diamond-flip">
+                    <div className="diamond-face front">
+                      <img src={member.image} alt={member.name} />
+                    </div>
+                    <div className="diamond-face back">
+                      <p>{member.name}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="member-info">
+                  <h3>{member.name}</h3>
+                  <p>{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button className="mobile-nav-btn right" onClick={handleNext}>›</button>
+
+          <div className="pagination">
+            {teamMembers.map((_, index) => (
+              <div
+                key={index}
+                className={`pagination-item ${
+                  currentIndex === index ? "active" : ""
+                }`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

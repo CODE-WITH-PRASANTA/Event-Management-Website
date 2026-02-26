@@ -1,46 +1,51 @@
-import React, { useEffect } from 'react';
-import './WonderfullCopule.css';
+import React, { useEffect } from "react";
+import "./WonderfullCopule.css";
 
-import event1 from '../../assets/Copule1.webp';
-import event2 from '../../assets/Copule2.webp';
+import event1 from "../../assets/Copule1.webp";
+import event2 from "../../assets/Copule2.webp";
+import floral from "../../assets/iconflowers-3.webp"; // ⭐ your side decoration image
 
 const WonderfullCopule = () => {
-
-  // Add animation class when component loads
   useEffect(() => {
-    const elements = document.querySelectorAll('.animate');
+    const elements = document.querySelectorAll(".animate");
     elements.forEach((el, index) => {
       setTimeout(() => {
-        el.classList.add('show');
+        el.classList.add("show");
       }, index * 300);
     });
   }, []);
 
   return (
     <section className="wedding-section">
-      
+
+      {/* RIGHT SIDE FLORAL IMAGE */}
+      <img src={floral} alt="" className="floral-side" />
+
       <div className="watermark-text">WENDOLA</div>
 
       <div className="container">
         <div className="wedding-grid">
-          
-          {/* Left Column */}
+
+          {/* LEFT */}
           <div className="left-col animate">
+
             <div className="image-wrapper-small">
               <img src={event1} alt="Wedding couple" />
             </div>
 
-            <div className="quote-box animate">
+            <div className="quote-box">
               <p>
-                TODAY, WE CELEBRATE THE LOVE AND COMMITMENT 
+                TODAY, WE CELEBRATE THE LOVE AND COMMITMENT
                 OF THIS WONDERFUL COUPLE.
               </p>
+
               <button className="view-map-btn">VIEW MAP</button>
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* RIGHT */}
           <div className="right-col">
+
             <div className="text-content animate">
               <p className="description">
                 From the vibrant flowers and trees to the gently flowing streams,
@@ -64,8 +69,6 @@ const WonderfullCopule = () => {
 
         </div>
       </div>
-
-      <div className="floral-decoration"></div>
     </section>
   );
 };
