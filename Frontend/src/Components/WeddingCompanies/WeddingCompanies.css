@@ -1,0 +1,148 @@
+/* ===============================
+   SECTION
+================================*/
+.WeddingCompaniessection {
+  position: relative;
+  background: #fff;
+  padding: 90px 30px;
+  overflow: hidden;
+}
+
+/* Decorative Layer */
+.WeddingCompaniesdecor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ===============================
+   TITLE
+================================*/
+.WeddingCompaniestitle {
+  font-family: "Playfair Display", serif;
+  font-size: 62px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1f1f1f;
+  margin-bottom: 70px;
+  text-align: center;
+  
+}
+
+/* ===============================
+   LOGO SLIDER
+================================*/
+.WeddingCompanieslogo-wrapper {
+  overflow: hidden;
+}
+
+.WeddingCompanieslogo-track {
+  display: flex;
+  gap: 100px;
+  width: max-content;
+  animation: wc-marquee 30s linear infinite;
+}
+
+.WeddingCompanieslogo-track img {
+  height: 120px;
+
+  filter: grayscale(100%);
+  transition: 0.4s ease;
+}
+
+.WeddingCompanieslogo-track img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+@keyframes wc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===============================
+   PREMIUM FLOATING LEAVES
+================================*/
+.WeddingCompaniesleaf {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+/* LEFT DECORATION (REFERENCE STYLE) */
+.WeddingCompaniesleaf-left {
+  left: -40px;
+  top: 40px;
+  width: 300px;
+  animation: wcFloatLeft 9s ease-in-out infinite;
+}
+
+/* RIGHT DECORATION */
+.WeddingCompaniesleaf-right {
+  right: -30px;
+  top: -20px;
+  width: 280px;
+  animation: wcFloatRight 11s ease-in-out infinite;
+}
+
+/* Luxury floating motion */
+@keyframes wcFloatLeft {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(25px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes wcFloatRight {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media (max-width: 992px) {
+  .WeddingCompaniestitle {
+    font-size: 38px;
+  }
+
+  .WeddingCompaniesleaf-left {
+    width: 180px;
+    left: -60px;
+  }
+
+  .WeddingCompaniesleaf-right {
+    width: 190px;
+  }
+
+  .WeddingCompanieslogo-track img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .WeddingCompaniestitle {
+    font-size: 28px;
+  }
+
+  .WeddingCompaniessection {
+    padding: 70px 15px;
+  }
+
+  .WeddingCompaniesleaf {
+    opacity: 0.6;
+  }
+}

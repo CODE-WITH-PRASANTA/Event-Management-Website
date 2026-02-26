@@ -1,0 +1,168 @@
+/* SECTION */
+.luxPkg-section{
+  background:#fff;
+  padding:140px 6%;
+}
+
+/* GRID */
+.luxPkg-container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:100px;
+}
+
+/* CARD */
+.luxPkg-card{
+  position:relative;
+  background:#2e3852;
+  padding:90px 80px 90px 220px;
+  overflow:visible;
+  border:1px solid #e7e7e7;
+  transition:.45s ease;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* FLOATING HOVER LIFT */
+.luxPkg-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 30px 70px rgba(0,0,0,0.18);
+}
+
+/* IMAGE OVERLAP */
+.luxPkg-image{
+  position:absolute;
+  left:-90px;
+  top:50%;
+  transform:translateY(-50%);
+  width:280px;
+  height:380px;
+  overflow:hidden;
+  z-index:5;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.luxPkg-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s ease;
+}
+
+/* PREMIUM ZOOM */
+.luxPkg-card:hover .luxPkg-image img{
+  transform:scale(1.12);
+}
+
+/* TITLE */
+.luxPkg-title{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:28px;
+  letter-spacing:.5px;
+}
+
+/* LIST */
+.luxPkg-list{
+  list-style:none;
+  padding:0;
+  margin-bottom:35px;
+}
+
+.luxPkg-list li{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:#e6e6e6;
+  margin-bottom:15px;
+  font-size:17px;
+}
+
+.luxPkg-list svg{
+  color:#e58b4d;
+}
+
+/* PRICE */
+.luxPkg-price{
+  font-size:40px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:30px;
+}
+
+.luxPkg-price span{
+  font-size:17px;
+  color:#cfcfcf;
+}
+
+/* BUTTON */
+.luxPkg-btn{
+  background:#e58b4d;
+  border:none;
+  padding:18px 42px;
+  border-radius:50px;
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  transition:.35s;
+}
+
+/* GOLD HOVER */
+.luxPkg-btn:hover{
+  background:linear-gradient(135deg,#f0a76c,#d17337);
+  transform:translateY(-3px);
+}
+
+/* CLICK */
+.luxPkg-btn.active{
+  background:#c62828;
+}
+
+/* FLOWER */
+.luxPkg-flower{
+  position:absolute;
+  right:40px;
+  bottom:20px;
+  width:260px;
+  opacity:.12;
+}
+
+/* ENTRANCE ANIMATION */
+.luxPkg-card{
+  animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .luxPkg-container{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .luxPkg-card{
+    padding:35px;
+  }
+
+  .luxPkg-image{
+    position:relative;
+    left:0;
+    top:0;
+    transform:none;
+    width:100%;
+    height:240px;
+    margin-bottom:25px;
+  }
+}
