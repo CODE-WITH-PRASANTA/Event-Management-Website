@@ -11,6 +11,11 @@ import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import Event from "./Pages/Events/Events";
 import Contact from "./Pages/Contact/Contact";
+<<<<<<< HEAD
+import News from "./Pages/News/News";
+import NewsDetails from "./Pages/NewsDetails/NewsDetails";
+=======
+>>>>>>> 7b24bb8cc0d0836998edbea79f453f488e030b02
 
 function App() {
   return (
@@ -34,6 +39,7 @@ function App() {
 
          {/* Contact page */}
         <Route path="/contact" element={<Contact/>}/>
+>>>>>>> 72f1c9ebf619ff65685af803de6af94b9784ffe5
         
 
         {/* Default Route */}
