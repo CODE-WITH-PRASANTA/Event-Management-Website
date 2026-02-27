@@ -1,173 +1,270 @@
-.wedding-section {
+/* WonderfullCopule.css */
+
+/* ===== Base ===== */
+.wonderful-couple {
   position: relative;
-  background: #eef7fc;
-  padding: 120px 0;
+  padding: 110px 0;
   overflow: hidden;
-  min-height: 720px;
-  display: flex;
-  align-items: center;
-  font-family: 'Playfair Display', serif;
+  background: #eaf3f7; /* same light blue */
+  font-family: "Playfair Display", serif;
 }
 
-/* ⭐ RIGHT SIDE FLORAL IMAGE */
-.floral-side {
+/* soft curved background like reference */
+.wonderful-couple::before {
+  content: "";
+  position: absolute;
+  left: -220px;
+  top: 90px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.25) 60%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  filter: blur(0.2px);
+  pointer-events: none;
+}
+
+/* subtle leaf tint on far right */
+.wonderful-couple::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* ===== Right side floral image ===== */
+.wonderful-couple__floral {
   position: absolute;
   right: 0;
   top: 0;
   height: 100%;
-  max-height: 900px;
+  max-height: 980px;
+  width: auto;
   object-fit: contain;
   pointer-events: none;
   z-index: 1;
+  opacity: 0.95;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+/* ===== Watermark ===== */
+.wonderful-couple__watermark {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-10%);
+  font-size: 11.5rem;
+  font-weight: 800;
+  letter-spacing: 14px;
+  color: rgba(10, 30, 50, 0.045);
+  pointer-events: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* ===== Container ===== */
+.wonderful-couple__container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 22px;
   position: relative;
   z-index: 2;
 }
 
-/* GRID */
-.wedding-grid {
+/* ===== Layout ===== */
+.wonderful-couple__grid {
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 80px;
-  align-items: center;
+  grid-template-columns: 470px 1fr;
+  gap: 70px;
+  align-items: start;
 }
 
-/* WATERMARK */
-.watermark-text {
-  position: absolute;
-  bottom: 30px;
-  right: 8%;
-  font-size: 12rem;
-  font-weight: 900;
-  color: rgba(0, 40, 80, 0.04);
-  letter-spacing: 14px;
-  pointer-events: none;
-}
-
-/* ANIMATION */
-.animate {
+/* ===== Animation ===== */
+.wonderful-couple__animate {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 1s ease;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
-
-.animate.show {
+.wonderful-couple__show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* LEFT */
-.left-col {
-  text-align: center;
+/* ===== Left ===== */
+.wonderful-couple__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* SMALL IMAGE */
-.image-wrapper-small {
-  border: 12px solid #fff;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  overflow: hidden;
-}
-
-.image-wrapper-small img {
+/* small image (square-ish) like reference */
+.wonderful-couple__imgSmall {
   width: 100%;
+  background: #fff;
+  padding: 14px; /* thick white border */
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.14);
+}
+.wonderful-couple__imgSmall img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
   display: block;
-  transition: 1s;
+}
+.wonderful-couple__imgSmall:hover img {
+  transform: scale(1.02);
+  transition: transform 0.7s ease;
 }
 
-.image-wrapper-small:hover img {
-  transform: scale(1.08);
+.wonderful-couple__quote {
+  margin-top: 34px;
 }
-
-/* QUOTE */
-.quote-box {
-  margin-top: 35px;
-}
-
-.quote-box p {
-  font-size: 0.95rem;
+.wonderful-couple__quote p {
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.85;
   letter-spacing: 2px;
-  line-height: 1.7;
   text-transform: uppercase;
-  color: #444;
-  margin-bottom: 25px;
+  color: #2b2b2b;
+  font-weight: 500;
 }
 
-/* BUTTON */
-.view-map-btn {
-  background: linear-gradient(45deg,#a52a4a,#c44569);
-  border: none;
-  color: white;
-  padding: 13px 34px;
-  border-radius: 30px;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+/* button like reference */
+.wonderful-couple__btn {
+  border: 0;
   cursor: pointer;
-  transition: .4s;
+  padding: 14px 34px;
+  border-radius: 999px;
+  background: #b12644;
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(177, 38, 68, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.wonderful-couple__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(177, 38, 68, 0.3);
+  background: #a31f3b;
 }
 
-.view-map-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(165,42,74,.35);
+/* ===== Right ===== */
+.wonderful-couple__right {
+  padding-top: 8px;
 }
 
-/* RIGHT */
-.text-content {
-  margin-bottom: 35px;
+.wonderful-couple__text {
+  max-width: 690px;
+  margin-bottom: 26px;
 }
 
-.description {
-  color: #666;
+.wonderful-couple__desc {
+  margin: 0 0 18px;
+  color: #6a6a6a;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  font-size: 1rem;
   line-height: 1.9;
-  max-width: 520px;
-  margin-bottom: 18px;
-  font-size: 0.95rem;
 }
 
-/* TIME */
-.event-time {
+/* time row like reference */
+.wonderful-couple__time {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
+  gap: 12px;
+  color: #121212;
 }
-
-/* LARGE IMAGE */
-.image-wrapper-large {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+.wonderful-couple__clock {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
-
-.image-wrapper-large img {
-  width: 100%;
+.wonderful-couple__clock svg {
   display: block;
-  transition: 1.2s;
+}
+.wonderful-couple__timeText {
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-size: 1.05rem;
 }
 
-.image-wrapper-large:hover img {
-  transform: scale(1.05);
+/* large image like reference */
+.wonderful-couple__imgLarge {
+  width: 100%;
+  background: #fff;
+  padding: 14px;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.18);
+}
+.wonderful-couple__imgLarge img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.wonderful-couple__imgLarge:hover img {
+  transform: scale(1.02);
+  transition: transform 0.9s ease;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .wedding-grid {
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .wonderful-couple__grid {
+    grid-template-columns: 420px 1fr;
+    gap: 50px;
+  }
+  .wonderful-couple__watermark {
+    font-size: 9rem;
+  }
+  .wonderful-couple__imgLarge img {
+    height: 380px;
+  }
+}
+
+@media (max-width: 820px) {
+  .wonderful-couple {
+    padding: 80px 0;
+  }
+  .wonderful-couple__grid {
     grid-template-columns: 1fr;
-    gap: 45px;
+    gap: 40px;
   }
-
-  .watermark-text {
-    font-size: 5rem;
+  .wonderful-couple__left {
+    align-items: center;
   }
-
-  .floral-side {
-    opacity: .4;
+  .wonderful-couple__quote {
+    text-align: center;
+  }
+  .wonderful-couple__watermark {
+    font-size: 5.6rem;
+    transform: translateX(-50%);
+    left: 50%;
+    letter-spacing: 10px;
+    opacity: 0.9;
+  }
+  .wonderful-couple__floral {
+    opacity: 0.45;
+  }
+  .wonderful-couple__imgSmall img {
+    height: 300px;
+  }
+  .wonderful-couple__imgLarge img {
+    height: 320px;
   }
 }
