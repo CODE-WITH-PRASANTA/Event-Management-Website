@@ -7,6 +7,8 @@ import HomeHeading from '../../Components/HomeHeading/HomeHeading'
 import HomeStories from '../../Components/HomeStories/HomeStories'
 import HomeWedingClicks from '../../Components/HomeWeddingClicks/HomeWeddingClicks'
 import HomePricing from '../../Components/HomePricing/HomePricing'
+import HomeScoring from '../../Components/HomeScoring/HomeScoring'
+import HomeNews from '../../Components/HomeNews/HomeNews'
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       <HomeStories />
       <HomeWedingClicks />
       <HomePricing />
+      <HomeScoring />
+      <HomeNews />
     </div>
   )
 }

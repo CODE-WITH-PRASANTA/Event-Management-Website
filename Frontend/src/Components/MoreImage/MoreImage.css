@@ -1,17 +1,20 @@
-/* SECTION */
+/* ================= SECTION ================= */
+
 .miGallery-wrapper {
   padding: 80px 6%;
   background: #efefef;
 }
 
-/* ===== GRID ALIGNMENT ===== */
+/* ================= GRID ================= */
+
 .miGallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-/* IMAGE ITEMS */
+/* ================= IMAGE ITEMS ================= */
+
 .miGallery-item {
   position: relative;
   overflow: hidden;
@@ -25,7 +28,8 @@
   transition: 0.4s;
 }
 
-/* SAME ALIGNMENT AS REFERENCE */
+/* ===== SAME ALIGNMENT ===== */
+
 .miGallery-item-0 { height: 320px; }
 .miGallery-item-1 { height: 320px; }
 .miGallery-item-2 { height: 320px; }
@@ -33,7 +37,8 @@
 .miGallery-item-4 { height: 420px; }
 .miGallery-item-5 { height: 420px; }
 
-/* HOVER */
+/* ================= HOVER ================= */
+
 .miGallery-hover {
   position: absolute;
   inset: 0;
@@ -41,7 +46,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
   opacity: 0;
   transition: 0.3s;
 }
@@ -54,7 +58,8 @@
   opacity: 1;
 }
 
-/* ===== LIGHTBOX ===== */
+/* ================= LIGHTBOX ================= */
+
 .miGallery-lightbox {
   position: fixed;
   inset: 0;
@@ -72,7 +77,8 @@
   object-fit: contain;
 }
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
+
 .miGallery-topbar {
   position: absolute;
   top: 15px;
@@ -90,7 +96,8 @@
   font-size: 18px;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
+
 .miGallery-prev,
 .miGallery-next {
   position: absolute;
@@ -105,20 +112,131 @@
 .miGallery-prev { left: 25px; }
 .miGallery-next { right: 25px; }
 
-/* ===== RESPONSIVE ===== */
+/* ================= MOBILE NAV (HIDDEN DEFAULT) ================= */
+
+.miGallery-mobileNav {
+  display: none;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+/* ---------- Tablet Landscape ---------- */
 @media (max-width: 992px) {
+
   .miGallery-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
   }
 
   .miGallery-item-3 {
     grid-column: span 1;
   }
+
+  .miGallery-item-0,
+  .miGallery-item-1,
+  .miGallery-item-2 {
+    height: 280px;
+  }
+
+  .miGallery-item-3,
+  .miGallery-item-4,
+  .miGallery-item-5 {
+    height: 340px;
+  }
 }
 
-@media (max-width: 600px) {
+/* ---------- Tablet Portrait ---------- */
+@media (max-width: 768px) {
+
+  .miGallery-wrapper {
+    padding: 70px 5%;
+  }
+
   .miGallery-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
+  }
+
+  .miGallery-item {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* =====================================================
+   ⭐ MOBILE HORIZONTAL PAGINATION ONLY
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .miGallery-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 18px;
+
+    scrollbar-width: none;
+  }
+
+  .miGallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .miGallery-item {
+    flex: 0 0 85%;
+    min-width: 85%;
+    scroll-snap-align: center;
+    aspect-ratio: 4 / 3;
+    height: auto !important;
+    grid-column: span 1 !important;
+  }
+
+  .miGallery-wrapper {
+    padding: 60px 5%;
+  }
+
+  /* pagination buttons */
+  .miGallery-mobileNav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 25px;
+  }
+
+  .miGallery-mobileNav button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .miGallery-mobileNav button:hover {
+    transform: scale(1.1);
+  }
+
+  .miGallery-prev,
+  .miGallery-next {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 400px) {
+
+  .miGallery-wrapper {
+    padding: 50px 4%;
+  }
+
+  .miGallery-item {
+    flex: 0 0 92%;
+    min-width: 92%;
+    aspect-ratio: 1 / 1;
   }
 }
