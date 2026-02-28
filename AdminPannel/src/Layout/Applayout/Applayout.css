@@ -1,0 +1,119 @@
+/* ======================================================
+   ROOT LAYOUT
+====================================================== */
+.AppLayout {
+  display: flex;
+  width: 100%;
+  height: 100dvh; /* ✅ better mobile viewport */
+  background: #f5f7fb;
+  overflow: hidden;
+}
+
+/* ======================================================
+   MAIN COLUMN (HEADER + CONTENT)
+====================================================== */
+.AppLayout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* ✅ prevents overflow */
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+/* ======================================================
+   SCROLLABLE CONTENT AREA
+====================================================== */
+.AppLayout-content {
+  flex: 1;
+  min-height: 0;          /* ⭐ critical for flex scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: clamp(12px, 2vw, 24px);
+  background: #f5f7fb;
+
+  /* smoother scrolling */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ======================================================
+   CUSTOM SCROLLBAR
+====================================================== */
+.AppLayout-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.AppLayout-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.AppLayout-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+.AppLayout-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ======================================================
+   LARGE DESKTOP (1400px+)
+====================================================== */
+@media (min-width: 1400px) {
+  .AppLayout-content {
+    padding: 28px 32px;
+  }
+}
+
+/* ======================================================
+   LAPTOP
+====================================================== */
+@media (max-width: 1200px) {
+  .AppLayout-content {
+    padding: 20px;
+  }
+}
+
+/* ======================================================
+   TABLET
+====================================================== */
+@media (max-width: 1024px) {
+  .AppLayout-content {
+    padding: 18px;
+  }
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+@media (max-width: 768px) {
+
+  .AppLayout {
+    height: 100dvh;
+  }
+
+  .AppLayout-content {
+    padding: 16px;
+  }
+}
+
+/* ======================================================
+   SMALL MOBILE
+====================================================== */
+@media (max-width: 480px) {
+
+  .AppLayout-content {
+    padding: 14px;
+  }
+}
+
+/* ======================================================
+   EXTRA SMALL DEVICES
+====================================================== */
+@media (max-width: 360px) {
+
+  .AppLayout-content {
+    padding: 12px;
+  }
+}

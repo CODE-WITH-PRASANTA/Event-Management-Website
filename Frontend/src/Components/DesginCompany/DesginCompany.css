@@ -5,7 +5,7 @@
 .designCompanies-section{
   position:relative;
   background:#fff;
-  padding:150px 20px;
+  padding:clamp(80px,10vw,150px) 20px;
   overflow:hidden;
 }
 
@@ -27,10 +27,10 @@
 
 .designCompanies-title{
   font-family:"Playfair Display", serif;
-  font-size:42px;
+  font-size:clamp(26px,4vw,42px);
   font-weight:600;
   color:#222;
-  margin-bottom:60px;
+  margin-bottom:clamp(35px,6vw,60px);
   letter-spacing:1px;
 }
 
@@ -47,21 +47,21 @@
 
 .designCompanies-leaf{
   position:absolute;
-  width:440px;
+  width:clamp(120px,22vw,440px);
   opacity:.9;
 }
 
-/* left floating leaf */
+/* left leaf */
 .designCompanies-leaf-left{
-  left:-40px;
-  top:40px;
+  left:-6%;
+  top:8%;
   transform:rotate(-10deg);
 }
 
-/* right floating leaf */
+/* right leaf */
 .designCompanies-leaf-right{
-  right:-20px;
-  top:20px;
+  right:-5%;
+  top:5%;
   transform:rotate(10deg);
 }
 
@@ -75,26 +75,26 @@
   position:relative;
 }
 
-/* gradient fade sides (premium look) */
+/* premium fade edges */
 .designCompanies-logo-wrapper::before,
 .designCompanies-logo-wrapper::after{
   content:"";
   position:absolute;
   top:0;
-  width:250px;
-  height:300px;
+  height:100%;
+  width:clamp(60px,12vw,250px);
   z-index:3;
   pointer-events:none;
 }
 
 .designCompanies-logo-wrapper::before{
   left:0;
-  background:linear-gradient(to right,#f6f4f2,transparent);
+  background:linear-gradient(to right,#fff,transparent);
 }
 
 .designCompanies-logo-wrapper::after{
   right:0;
-  background:linear-gradient(to left,#f6f4f2,transparent);
+  background:linear-gradient(to left,#fff,transparent);
 }
 
 /* =====================================
@@ -104,12 +104,12 @@
 .designCompanies-logo-track{
   display:flex;
   align-items:center;
-  gap:80px;
+  gap:clamp(35px,6vw,80px);
   width:max-content;
   animation:designCompanies-scroll 28s linear infinite;
 }
 
-/* pause animation on hover */
+/* pause on hover */
 .designCompanies-logo-wrapper:hover
 .designCompanies-logo-track{
   animation-play-state:paused;
@@ -120,7 +120,7 @@
 ===================================== */
 
 .designCompanies-logo-track img{
-  height:70px;
+  height:clamp(40px,6vw,70px);
   object-fit:contain;
   opacity:.7;
   transition:.35s ease;
@@ -147,52 +147,54 @@
 }
 
 /* =====================================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
 ===================================== */
 
+/* ---------- Laptop ---------- */
 @media(max-width:1024px){
 
-  .designCompanies-title{
-    font-size:36px;
-  }
-
   .designCompanies-logo-track{
-    gap:60px;
+    animation-duration:24s;
   }
 }
 
+/* ---------- Tablet ---------- */
 @media(max-width:768px){
 
   .designCompanies-section{
-    padding:80px 15px;
-  }
-
-  .designCompanies-title{
-    font-size:30px;
-    margin-bottom:45px;
-  }
-
-  .designCompanies-logo-track img{
-    height:55px;
+    padding:70px 15px;
   }
 
   .designCompanies-leaf{
-    width:120px;
     opacity:.7;
+  }
+
+  .designCompanies-logo-wrapper::before,
+  .designCompanies-logo-wrapper::after{
+    width:50px;
   }
 }
 
+/* ---------- Mobile ---------- */
 @media(max-width:480px){
 
+  .designCompanies-title{
+    letter-spacing:.5px;
+  }
+
   .designCompanies-logo-track{
-    gap:40px;
+    animation-duration:20s;
+  }
+}
+
+/* ---------- Small Phones ---------- */
+@media(max-width:360px){
+
+  .designCompanies-logo-track{
+    gap:28px;
   }
 
   .designCompanies-logo-track img{
-    height:45px;
-  }
-
-  .designCompanies-title{
-    font-size:26px;
+    height:38px;
   }
 }
