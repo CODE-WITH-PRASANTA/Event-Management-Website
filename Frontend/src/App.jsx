@@ -10,6 +10,7 @@ import Pricing from "./Pages/Pricing/Pricing";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import Contact from "./Pages/Contact/Contact";
+import OurTeam from "./Pages/OurTeam/OurTeam";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
         <Route path="/gallery" element={<Galary />} />
         <Route path="/prices" element={<Pricing />}/>
 
-
+        {/* Our Team */}
+        <Route path="/our-team" element={<OurTeam/>}/>
 
          {/* Contact page */}
         <Route path="/contact" element={<Contact/>}/>
