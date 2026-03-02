@@ -12,6 +12,8 @@ import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import Contact from "./Pages/Contact/Contact";
 import News from "./Pages/News/News";
 import NewsDetails from "./Pages/NewsDetails/NewsDetails";
+import BookAppointement from "./Pages/BookAppointement/BookAppointement";
+import Service from "./Pages/Service/Service";
 
 function App() {
   return (
@@ -38,6 +40,12 @@ function App() {
 
          {/* News Details page */}
         <Route path="/news-details" element={<NewsDetails/>} />
+
+         {/* Book Appointement */}
+        <Route path="/appointment" element={<BookAppointement/>}/>
+
+         {/* Service */}
+        <Route path="/services" element={<Service/>}/>
 
         
 
