@@ -10,6 +10,7 @@ import Pricing from "./Pages/Pricing/Pricing";
 import Footer from "./Components/Footer/Footer";
 import GetInTouch from "./Components/GetInTouch/GetInTouch";
 import Contact from "./Pages/Contact/Contact";
+import RSVP from "./Pages/RSVP/RSVP";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
+        <Route path="/rsvp" element={<RSVP />} />
         {/* About Us Page */}
         <Route path="/about" element={<About />} />
     
