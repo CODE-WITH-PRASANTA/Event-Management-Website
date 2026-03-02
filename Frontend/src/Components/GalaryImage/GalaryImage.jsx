@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./GalaryImage.css";
 
 import img1 from "../../assets/page-2.webp";
@@ -8,24 +8,36 @@ import img4 from "../../assets/page-5.webp";
 import img5 from "../../assets/page-6.webp";
 import img6 from "../../assets/page-7.webp";
 
-/* ⭐ leaf image */
 import leaf from "../../assets/Leaf-1.webp";
 
 const images = [img1, img2, img3, img4, img5, img6];
 
 const GalaryImage = () => {
   const [preview, setPreview] = useState(null);
+  const scrollRef = useRef(null);
+
+  /* ⭐ mobile pagination scroll */
+  const scrollGallery = (dir) => {
+    if (!scrollRef.current) return;
+
+    const width = scrollRef.current.offsetWidth;
+
+    scrollRef.current.scrollBy({
+      left: dir === "next" ? width * 0.9 : -width * 0.9,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="galaryimage--section">
 
-      {/* ⭐ LEFT LEAF */}
       <img src={leaf} alt="" className="galaryimage--leaf left" />
-
-      {/* ⭐ RIGHT LEAF */}
       <img src={leaf} alt="" className="galaryimage--leaf right" />
 
-      <div className="galaryimage--container">
+      <div
+        className="galaryimage--container"
+        ref={scrollRef}
+      >
         {images.map((img, i) => (
           <div
             key={i}
@@ -37,7 +49,12 @@ const GalaryImage = () => {
         ))}
       </div>
 
-      {/* ⭐ POPUP */}
+      {/* ⭐ MOBILE PAGINATION ONLY */}
+      <div className="galaryimage--mobileNav">
+        <button onClick={() => scrollGallery("prev")}>‹</button>
+        <button onClick={() => scrollGallery("next")}>›</button>
+      </div>
+
       {preview && (
         <div className="galaryimage--popup" onClick={() => setPreview(null)}>
           <img src={preview} alt="preview" />
