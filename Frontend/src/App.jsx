@@ -15,13 +15,10 @@ import Event from "./Pages/Events/Events";
 import Contact from "./Pages/Contact/Contact";
 import News from "./Pages/News/News";
 import NewsDetails from "./Pages/NewsDetails/NewsDetails";
-<<<<<<< HEAD
 import EventsDetail from "./Pages/EventsDetail/EventsDetail";
 import OurTeam from "./Pages/OurTeam/OurTeam";
-=======
 import BookAppointement from "./Pages/BookAppointement/BookAppointement";
 import Service from "./Pages/Service/Service";
->>>>>>> a7018e3960d31fe5c0f40a382f672d596423a490
 
 function App() {
   return (
@@ -45,10 +42,8 @@ function App() {
         <Route path="/news/:id" element={<NewsDetails />} />
 
         {/* Our Team */}
-<<<<<<< HEAD
         <Route path="/our-team" element={<OurTeam />} />
-=======
-        <Route path="/our-team" element={<OurTeam/>}/>
+        
 
          {/* Contact page */}
         <Route path="/contact" element={<Contact/>}/>
@@ -68,7 +63,6 @@ function App() {
         
 
         {/* Default Route */}
->>>>>>> a7018e3960d31fe5c0f40a382f672d596423a490
       </Routes>
 
       {/* ---------- Common Sections ---------- */}
