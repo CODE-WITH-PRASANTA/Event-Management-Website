@@ -13,12 +13,16 @@ import Galary from "./Pages/Galary/Galary";
 import Pricing from "./Pages/Pricing/Pricing";
 import Event from "./Pages/Events/Events";
 import Contact from "./Pages/Contact/Contact";
+<<<<<<< HEAD
+import RSVP from "./Pages/RSVP/RSVP";
+=======
 import News from "./Pages/News/News";
 import NewsDetails from "./Pages/NewsDetails/NewsDetails";
 import EventsDetail from "./Pages/EventsDetail/EventsDetail";
 import OurTeam from "./Pages/OurTeam/OurTeam";
 import BookAppointement from "./Pages/BookAppointement/BookAppointement";
 import Service from "./Pages/Service/Service";
+>>>>>>> a7018e3960d31fe5c0f40a382f672d596423a490
 
 function App() {
   return (
@@ -30,6 +34,11 @@ function App() {
       {/* ---------- Routes ---------- */}
       <Routes>
         <Route path="/" element={<Home />} />
+<<<<<<< HEAD
+        <Route path="/rsvp" element={<RSVP />} />
+        {/* About Us Page */}
+=======
+>>>>>>> c6be23311aa91acb71118163260231acf3db07fa
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Galary />} />
         <Route path="/prices" element={<Pricing />} />
