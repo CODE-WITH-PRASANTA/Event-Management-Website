@@ -11,32 +11,45 @@ import AdminPlanManager from "./pages/AdminPlanManager/AdminPlanManager";
 function App() {
   return (
     <Routes>
+
       <Route element={<AppLayout />}>
-        <Route index element={<Navigate to="/dashboard" replace />} />
+
+        {/* default route */}
+        <Route index element={<Navigate to="dashboard" replace />} />
 
         <Route path="dashboard" element={<div>Dashboard</div>} />
 
+        {/* BLOG */}
         <Route path="blog">
-          {/* ✅ FIXED */}
           <Route path="add" element={<BlogAdmin />} />
           <Route path="list" element={<BlogPage />} />
         </Route>
 
+        {/* TEAM */}
         <Route path="team" element={<TeamAdmin />} />
+
         <Route path="categories" element={<div>Categories</div>} />
 
+        {/* PRICING */}
         <Route path="pricing">
           <Route path="post" element={<div>Post Plan</div>} />
           <Route path="list" element={<div>View Plan</div>} />
         </Route>
 
         <Route path="contacts" element={<div>Contacts</div>} />
-        <Route path="/testimonials" element={<AdminTestimonial/>} />
-        <Route path="/cold-lead" element={<AdminColdLeads/>} />
-        <Route path="/admin-contact" element={<AdminContactPage/>} />
-        <Route path="price-plan/post" element={<AdminPlanManager/>} />
+
+        {/* FIXED ROUTES */}
+        <Route path="testimonials" element={<AdminTestimonial />} />
+        <Route path="cold-lead" element={<AdminColdLeads />} />
+        <Route path="admin-contact" element={<AdminContactPage />} />
+
+        {/* PLAN */}
+        <Route path="price-plan">
+          <Route path="post" element={<AdminPlanManager />} />
+        </Route>
 
       </Route>
+
     </Routes>
   );
 }
